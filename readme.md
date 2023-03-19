@@ -1,0 +1,1 @@
+Todo list application using Typescript in vanilla JS, HTML and CSS.
