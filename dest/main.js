@@ -36,10 +36,19 @@ const appendTodo = (newTodo) => {
     checkB.type = "checkbox";
     checkB.addEventListener("change", () => {
         console.log("checked");
+        checkB.checked = newTodo.completed;
         newTodo.completed = checkB.checked;
+        saveTodos();
     });
     newLi.append(newTodo.todo, checkB);
     todoList.prepend(newLi);
 };
 //form event listener
 formTodo.addEventListener("submit", e => submitHandler(e));
+//delete all
+const clearTodos = () => {
+    todos.length = 0;
+    saveTodos();
+    todoList.innerHTML = "";
+};
+delBtn.onclick = () => clearTodos();
