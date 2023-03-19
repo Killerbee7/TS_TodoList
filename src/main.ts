@@ -59,13 +59,14 @@ const appendTodo= (newTodo: Todo) => {
     const newLi = document.createElement("li");
     const checkB = document.createElement('input');
     checkB.type="checkbox";
+    checkB.checked= newTodo.completed;
 
-    checkB.addEventListener("change", ()=>{
+    checkB.onchange= ()=>{
         console.log("checked");
-        checkB.checked= newTodo.completed;
+        
         newTodo.completed = checkB.checked;
         saveTodos();
-    })
+    }
     newLi.append(newTodo.todo, checkB);
     todoList.prepend(newLi);
 }

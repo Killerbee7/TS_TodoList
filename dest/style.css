@@ -53,3 +53,7 @@ button{
     cursor: pointer;
     
 }
+
+.delete-all{
+    margin-top: 20px;
+}

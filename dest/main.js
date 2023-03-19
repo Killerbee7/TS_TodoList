@@ -34,12 +34,12 @@ const appendTodo = (newTodo) => {
     const newLi = document.createElement("li");
     const checkB = document.createElement('input');
     checkB.type = "checkbox";
-    checkB.addEventListener("change", () => {
+    checkB.checked = newTodo.completed;
+    checkB.onchange = () => {
         console.log("checked");
-        checkB.checked = newTodo.completed;
         newTodo.completed = checkB.checked;
         saveTodos();
-    });
+    };
     newLi.append(newTodo.todo, checkB);
     todoList.prepend(newLi);
 };
